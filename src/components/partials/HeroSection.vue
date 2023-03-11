@@ -4,7 +4,7 @@
             <h1>
                 <b>Wayfinder - depression</b>
             </h1>
-            <p>Login or Register</p>
+
         </div>
     </div>
     <div></div>

@@ -61,7 +61,7 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios'
-// import { useUserStore } from '../store/user-store'
+import { useUserStore } from '../store/user-store'
 // import { useProfileStore } from '../store/profile-store'
 // import { useSongStore } from '../store/song-store'
 // import { usePostStore } from '../store/post-store'
@@ -70,7 +70,7 @@ import axios from 'axios'
 import TextInput from '../components/global/TextInput.vue'
 // import TopNavigation from '@/components/structure/TopNavigation.vue';
 // const router = useRouter()
-// const userStore = useUserStore()
+const userStore = useUserStore()
 // const profileStore = useProfileStore()
 // const songStore = useSongStore()
 // const postStore = usePostStore()
@@ -81,12 +81,12 @@ let password = ref(null)
 const login = async () => {
   errors.value = []
   try {
-    let res = await axios.post('api/login', {
+    let res = await axios.post(`${process.env.VUE_APP_BACK_END_URL}/api/login`, {
       email: email.value,
       password: password.value,
     })
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token
-    // userStore.setUserDetails(res)
+    userStore.setUserDetails(res)
 
     // await profileStore.fetchProfileById(userStore.id)
     // await songStore.fetchSongsByUserId(userStore.id)

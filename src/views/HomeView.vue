@@ -1,23 +1,21 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <HeroSection />
-    <Example />
+    <TopNavigation/>
+    <HeroSection/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Example from '@/components/ExampleComponent.vue';
-import HelloWorld from '@/components/HelloWorld.vue'
+// import HelloWorld from '@/components/HelloWorld.vue'
 import HeroSection from '@/components/partials/HeroSection.vue';
+import TopNavigation from "@/components/structure/TopNavigation";
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld,
-    HeroSection,
-    Example
-}
+    TopNavigation,
+    HeroSection
+  }
 }
 </script>
